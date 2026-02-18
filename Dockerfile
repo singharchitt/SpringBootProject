@@ -8,6 +8,7 @@ COPY pom.xml .
 COPY src src
 
 # Building the jar
+RUN chmod +x mvnw
 RUN ./mvnw install -DskipTests
 RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 
