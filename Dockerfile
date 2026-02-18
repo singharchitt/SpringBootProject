@@ -19,7 +19,5 @@ COPY --from=build ${DEPENDENCY}/BOOT-INF/lib /app/lib
 COPY --from=build ${DEPENDENCY}/META-INF /app/META-INF
 COPY --from=build ${DEPENDENCY}/BOOT-INF/classes /app
 
-# copy private key for firebase auth
-COPY private-key.json /app/.
 
-ENTRYPOINT ["java","-cp","app:app/lib/*","com.bharat.backendAssignment.BackendAssignmentApplication"]
+ENTRYPOINT ["java","-cp","app:app/lib/*","com.space.SpaceAPI.SpaceApiApplication"]
